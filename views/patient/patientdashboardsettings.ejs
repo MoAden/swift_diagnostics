@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Patient Portal Setting</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="css/dashboardcss.css" rel="stylesheet" id="bootstrap-css">
+
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"> </script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <script>
+
+  // just for the demos, avoids form submit
+$(document).ready(function () {
+  $( "#changepassword-form" ).validate({
+    rules: {
+      pwd2: {
+        equalTo: "#pwd"
+      }
+    }
+  });
+});
+
+
+
+
+   </script>
+</head>
+<body class="setting">
+  <header id="home-page" class="site-header">
+
+    <img class="Logo" src ="images/logo.png" style = "height:96px; width:158px;">
+</header>
+    <div class="container-fluid display-table">
+        <div class="row display-table-row">
+            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+                <div class="logo">
+                </div>
+                <div class="navi">
+                    <ul>
+                        <li ><a href="/patientdashboard"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>
+                        <li><a href="/patientdashboardtests"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Tests</span></a></li>
+                        <li ><a href="/patientdashboardprofile"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Profile</span></a></li>
+                        <li class="active"><a href="/patientdashboardsettings"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
+                        <li><a href="/patientdashboardappointment"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Appointment</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+                <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
+                <div class="row">
+          <header>
+            <div class="col-md-7">
+               <nav class="navbar-default pull-left">
+             <div class="navbar-header">
+                 <button type="button" class="navbar-toggle collapsed" data-toggle="offcanvas" data-target="#side-menu" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                </button>
+               </div>
+              </nav>
+           </div>
+              <div class="col-md-5">
+              <div class="header-rightside">
+              <ul class="list-inline header-top pull-right">
+              <li class="hidden-xs"><%=firstname %> </a></li>
+              <li><a href="/patientlogout"> <button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-log-out"></span> Log out    </button></a></li>
+             </ul>
+            </div>
+           </div>
+          </header>
+         </div>
+         <div class="containter">
+        <div class="well well-medium" style="background-color:#FFD660" >
+          <%if (msg) { %>
+            <div class="alert alert-success">
+              <strong><%= msg %></strong>
+            </div>
+          <% } %>
+        <a href="#">   <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal"> Change Password</button></a>
+        <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Change Password</h4>
+      </div>
+      <div class="modal-body">
+       <div class = "row">
+<div class = "col-md-6 col-md-offset-3">
+
+  <form id="changepassword-form" class="form-horizontal" action="/patientchangepassword" method="post">
+
+
+  <div class="form-group " style="margin: 8px">
+
+
+
+  <div class="alert alert-danger" id="pwderror" style="display: none;">
+    <strong>Warning!</strong> Password does not match the confirm password.
+  </div>
+
+  <div class="form-group" style="margin: 8px">
+
+    <label for="pwd">New Password:</label>
+
+    <input type="password" class="form-control" id="pwd" name="pwd" required>
+
+  </div>
+  <div class="form-group" style="margin: 8px">
+
+    <label for="pwd">Confirm New Password:</label>
+
+    <input type="password" class="form-control" id="pwd2" name="pwd2" required>
+
+  </div>
+
+
+  <button type="submit" id="submitButton" class="btn btn-warning" >Submit</button>
+
+  </form>
+</div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+       </div>
+      </div>
+      </div>
+     </div>
+   </div>
+  </body>
+</html>
+<script>
+$(document).ready(function(){
+   $('[data-toggle="offcanvas"]').click(function(){
+       $("#navigation").toggleClass("hidden-xs");
+   });
+});
+</script>

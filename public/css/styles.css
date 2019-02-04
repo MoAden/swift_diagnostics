@@ -1,0 +1,67 @@
+body {background-color: #f2f4f4;
+
+ }
+
+.navbar{background-color: #333;
+
+		overflow: hidden;
+
+				}
+
+.navbar a {
+
+    position: relative;
+
+    display: block;
+
+    padding: 10px 15px;
+
+    color: #f2f2f2;
+
+    text-align: left;
+
+    padding: 14px 16px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-family: Trebuchet MS;
+
+}
+
+.loginButton{
+
+float:right;
+
+font-size: 16px;
+
+}
+
+.navbar-toggler{
+
+	size: height 100px;
+
+}
+
+.site-header{
+
+    background: url(../images/banner.jpg)
+
+}
+
+
+
+.site-footer {
+
+
+
+    overflow: hidden;
+
+    font-family: Trebuchet MS;
+
+    text-decoration-color: #f2f2f2;
+
+    background: #333;
+
+}

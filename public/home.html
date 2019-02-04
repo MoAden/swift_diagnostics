@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <title>Swift Diagnostics</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- stylesheets -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href ="styles.css">
+
+  <link rel="stylesheet" href="all.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- bootstrap and ajax -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+
+
+<body>
+
+	<!-- log0 -->
+
+	<header id="home-page" class="site-header">
+
+		<img class="Logo" src ="logo.png" style = "height:96px; width:158px;">
+
+		<nav class="site-nav navbar navbar-expand-lg navbar-inverse ">
+
+		<div class ="container-fluid">
+
+ 	<!-- navbar button when minimized -->
+
+    <button class="navbar-toggler hidden-lg hidden-md hidden-sm" data-toggle="collapse" data-target="#myTogglerNav" aria-controls="#myTogglerNav"
+
+      aria-label="Toggle Navigation">
+
+<span class="glyphicon glyphicon-align-justify"></span>
+
+</button>
+
+
+
+<!-- nav buttons/nav menu -->
+
+   <section class="collapse navbar-collapse" id="myTogglerNav">
+
+      <div class="navbar-nav">
+
+      <li><a class="nav-item nav-link" href="Homepage.html">Home</a></li>
+
+      <li><a class="nav-item nav-link" href="BillPay.html">Bill Pay</a></li>
+
+      <li><a class="nav-item nav-link" href="Labs.html">Labs</a></li>
+
+      <li><a class="nav-item nav-link" href="About.html">About Us</a></li>
+
+    </div>
+
+   <div class="loginButton">
+
+   <button class ="nav-item" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
+
+  </div>
+
+    </section>
+
+</header>
+
+
+
+    <!-- Modal content form MA-->
+
+    <div id="myModal" class="modal fade" role="dialog">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+        <h4 class="modal-title">Login</h4>
+
+      </div>
+
+      <div class="modal-body">
+
+        <!-- login form -->
+
+  <form class="form-horizontal" action="/login">
+
+
+
+  <div class="form-group " style="margin: 8px">
+
+    <label for="email">Email address:</label>
+
+    <input type="email" class="form-control input-sm" id="email" >
+
+  </div>
+
+
+
+  <div class="form-group" style="margin: 8px">
+
+    <label for="pwd">Password:</label>
+
+    <input type="password" class="form-control" id="pwd">
+
+  </div>
+
+  <a class ="nav-item" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#ssnModal"> Register </a>
+
+</form>
+
+      </div>
+
+
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-default btn-small" data-dismiss="modal">Close</button>
+
+        <button type="submit" class="btn btn-default "  id="loginButton" style="float: right">Login </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- end of Modal from MO -->
+
+  <!-- Modal for registration -->
+
+
+
+      <div id="ssnModal" class="modal fade" role="dialog">
+
+  <div class="modal-dialog">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <!-- login form -->
+
+  <form class="form-horizontal" action="/verify">
+
+    <p>Before we register you for an account, we want to make sure that you are in our system.</p>
+
+  <div class="form-group " style="margin: 8px">
+
+    <label for="email" >Social Security Number</label>
+
+    <input type="password" class="form-control" id="ssn" maxlength="9" >
+
+  </div>
+
+</form>
+
+      </div>
+
+      <div class="modal-footer">
+
+          <button type="button" class="btn btn-default btn-small" data-toggle="modal" data-target="#regModal" data-dismiss="">Submit</button>
+
+        <button type="button" class="btn btn-default btn-small" data-dismiss="modal">Close</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <!-- end of registration modal -->
+
+
+
+  <div id="regModal" class="modal fade" role="registration">
+
+  	<div class="modal-dialog">
+
+ 	 <div class="modal-content">
+
+  	<div class="modal-header">
+
+  		<h4 class="modal-header">Register for an account</h4>
+
+  		<div class="modal-body">
+
+  		<!-- login form -->
+
+  		<form class="form-horizontal" action="/register">
+
+
+
+  		<div class="form-group" style="margin: 8px">
+
+  			<!-- all the information to register -->
+
+  			<label for="lName">Last Name</label>
+
+  				<input type="lName" class="form-control" id="ln">
+
+  			<label for="fName">First Name</label>
+
+  				<input type="fName" class="form-control" id="fn">
+
+
+
+  			<label for="SNN">Social Security Number</label>
+
+  				<input type="SSN" class="form-control" id="ssn-mask">
+
+  			<label for="DOB">Date of Birth</label>
+
+  				<input type="date" class="form-control" class="input-group-addon">
+
+  				<!-- end of -->
+
+  			<div>
+
+  			<label for="Gender">Gender</label>
+
+  			</div>
+
+  			<div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+ 				 <label class="btn btn-secondary active">
+
+   				 <input type="radio" name="options" id="option1" autocomplete="off" checked> Female
+
+  			</label>
+
+  				<label class="btn btn-secondary">
+
+   			 <input type="radio" name="options" id="option2" autocomplete="off"> Male
+
+  			</label>
+
+  			<label class="btn btn-secondary">
+
+    		<input type="radio" name="options" id="option3" autocomplete="off"> Prefer not to Answer
+
+  		</label>
+
+  		<label for="regID">Registration ID-(Unique number facility would have provided)</label>
+
+  			<input type="regID" class="form-control" id="rid">
+
+  		<button type="submitBtn" class="btn btn-default form-control" style="float: right">Submit </button>
+
+  		<label for ="termOfServ" class="form-control" id="tos">
+
+  			<li></li>
+
+  			<a class ="nav-item" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#">by clicking submit you accept our  terms of service </a>
+
+
+
+	</div>
+
+	</div>
+
+	</div>
+
+	</div>
+
+</div>
+
+</div>
+
+
+
+<!-- end of regModal -->
+
+
+
+</div>
+
+ </div>
+
+</nav>
+
+<!-- header graphic -->
+
+<section class="layout-hero">
+
+<div class="content">
+
+
+
+<h3> Layout stuff</h3>
+
+<p> this layout using some stuff to make stuff</p>
+
+</div>
+
+</section>
+
+
+
+</header>
+
+this is all body text
+
+to see where the footer goes
+
+so if i keep typing
+
+the footer should go lower
+
+<li> enter</li>
+
+<li> enter </li>
+
+
+
+
+
+  <!-- social media tags -->
+
+
+
+    <footer class="site-footer">
+
+    	<h3> connect with us</h3>
+
+  		<button>
+
+  		<a href="https://twitter.com">
+
+  			<span class ="fa fa-twitter"></span>
+
+  		</button>
+
+  		<button>
+
+  			<a href="https://twitter.com/rxpriest?lang=en">
+
+  				<span class ="fa fa-facebook"></span>
+
+  		</button>
+
+  </footer>
+
+</body>
+
+</html>

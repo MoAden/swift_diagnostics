@@ -1,0 +1,117 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <title>Swift Diagnostics Login</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- stylesheets -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href ="css/styles.css">
+
+  <link rel="stylesheet" href="all.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- bootstrap and ajax -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+
+		<header id="home-page" class="site-header">
+
+		<img class="Logo" src ="images/logo.png" style = "height:96px; width:158px;">
+
+		<nav class="site-nav navbar navbar-expand-lg navbar-inverse ">
+
+		<div class ="container-fluid">
+<!-- nav buttons/nav menu -->
+
+   <section class="collapse navbar-collapse" id="myTogglerNav">
+      <div class="navbar-nav">
+      <li><a class="nav-item nav-link" href="/">Home</a></li>
+    </div>
+    </section>
+
+</header>
+
+</div>
+
+ </div>
+
+</nav>
+</header>
+
+<br>
+<br>
+<div class="container" >
+<div class="row">
+<div class="col-md-8 col-lg-offset-2">
+<div class="well well-medium" style="background-color:#FFD660" >
+<h4>Patient Portal Login </h4>
+<form id="patient-login-form" class="form-horizontal" action="/patientlogin" method="post">
+
+
+<div class="form-group " style="margin: 8px">
+<%if (msg) { %>
+  <div class="alert alert-danger">
+    <strong><%= msg %></strong>
+  </div>
+<% } %>
+  <label for="email">Email address:</label>
+
+  <input type="email" class="form-control input-sm" id="username" name="username" required>
+
+</div>
+
+
+
+<div class="form-group" style="margin: 8px">
+
+  <label for="pwd">Password:</label>
+
+  <input type="password" class="form-control" id="pwd" name="pwd" required>
+
+</div>
+
+<a href="/registerpatient" class ="nav-item" > Register </a>
+
+<button type="submit" class="btn btn-default">Submit</button>
+
+</form>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<footer class="site-footer">
+	<div class="footy">
+    	<span class="text-muted">Connect with us!</span>	
+	</div>
+        <a href="https://twitter.com/SwiftDiagnosti1" class ="fa fa-twitter"></a>
+  	<a href="https://twitter.com/SwiftDiagnosti1" class ="fa fa-facebook"></a>
+	<a class style="position: relative; left:90%";=>FAQs</a> 
+</footer>

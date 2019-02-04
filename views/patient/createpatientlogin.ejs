@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <title>Swift Diagnostics Login</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- stylesheets -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href ="/css/styles.css">
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- bootstrap and ajax -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"> </script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+  <script>
+
+  // just for the demos, avoids form submit
+$(document).ready(function () {
+  $( "#patient-createlogin-form" ).validate({
+    rules: {
+      pwd2: {
+        equalTo: "#pwd"
+      }
+    }
+  });
+});
+
+
+
+
+   </script>
+
+
+</head>
+
+
+	<header id="patient-login-patient" class="site-header">
+
+	<img class="Logo" src ="/images/logo.png" style = "height:96px; width:158px;">
+ <nav class="site-nav navbar navbar-expand-lg navbar-inverse ">
+		<div class ="container-fluid">
+
+
+</header>
+<div class="container">
+<div class="col-md-6 col-lg-offset-3">
+<div class="well well-medium" style="background-color:#FFD660" >
+<h4>Create Password </h4>
+
+<form id="patient-createlogin-form" class="form-horizontal" action="/createpatientlogin" method="post">
+
+
+
+<div class="form-group " style="margin: 8px">
+
+
+<div class="alert alert-info">
+  <strong>Welcome <%= firstName %>!</strong> <br> Create password for your account and please remember your username is your email.
+</div>
+<div class="alert alert-danger" id="pwderror" style="display: none;">
+  <strong>Warning!</strong> Password does not match the confirm password.
+</div>
+
+
+  <label for="email">Email address:</label>
+
+  <input type="email" class="form-control input-sm" id="username" value="<%= email %>" readonly name="email" required>
+
+</div>
+
+
+
+<div class="form-group" style="margin: 8px">
+
+  <label for="pwd">Password:</label>
+
+  <input type="password" class="form-control" id="pwd" name="pwd" required>
+
+</div>
+<div class="form-group" style="margin: 8px">
+
+  <label for="pwd">Confirm Password:</label>
+
+  <input type="password" class="form-control" id="pwd2" name="pwd2" required>
+
+</div>
+
+
+<button type="submit" id="submitButton" class="btn btn-default" >Submit</button>
+
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<footer class="site-footer">
+
+  <h3> connect with us</h3>
+
+  <button>
+
+  <a href="https://twitter.com">
+
+    <span class ="fa fa-twitter"></span>
+
+  </button>
+
+  <button>
+
+    <a href="https://twitter.com/rxpriest?lang=en">
+
+      <span class ="fa fa-facebook"></span>
+
+  </button>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <title>Swift Diagnostics Login</title>
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- stylesheets -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<link rel="stylesheet" href ="css/styles.css">
+
+  <link rel="stylesheet" href="all.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- bootstrap and ajax -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+</head>
+
+
+
+	<header id="employee-login-patient" class="site-header">
+
+		<img class="Logo" src ="images/logo.png" style = "height:96px; width:158px;">
+  </header>
+<br>
+<div class="container">
+  <div class="row">
+<div class="col-md-8 col-lg-offset-2">
+
+<div class="well well-medium" >
+<h4> Employee Login </h4>
+  <%if (msg) { %>
+    <div class="alert alert-danger">
+      <strong><%= msg %></strong>
+    </div>
+  <% } %>
+<form id="employee-login-form" class="form-horizontal" action="/internallogin" method="post">
+<div class="form-group " style="margin: 8px">
+
+  <label for="username"> Username</label>
+
+  <input type="text" class="form-control input-sm" id="username" name="username" required>
+
+</div>
+
+
+
+<div class="form-group" style="margin: 8px">
+
+  <label for="pwd">Password:</label>
+
+  <input type="password" class="form-control" id="pwd" name="pwd" required>
+
+</div>
+
+
+
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+</div>
+
+</div>
+</div>
+</div>
+
+
+<footer class="site-footer">
+
+  <h3> connect with us</h3>
+
+  <button>
+
+  <a href="https://twitter.com">
+
+    <span class ="fa fa-twitter"></span>
+
+  </button>
+
+  <button>
+
+    <a href="https://twitter.com/rxpriest?lang=en">
+
+      <span class ="fa fa-facebook"></span>
+
+  </button>
+
+</footer>
